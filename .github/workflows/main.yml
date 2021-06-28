@@ -16,7 +16,7 @@ jobs:
     - run: pip install pre-commit-mirror-maker
     - run: git config --global user.name Pedro Algarvio
     - run: git config --global user.email pedro@algarvio.me
-    - run: pre-commit-mirror . --language=python --package-name=invoke --types=file
+    - run: pre-commit-mirror . --language=python --package-name=invoke --types=file --entry invoke-wrapper --id invoke --require-serial
     - run: |
         git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY
         git push origin HEAD:refs/heads/main --tags

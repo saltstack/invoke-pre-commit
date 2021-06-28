@@ -1,6 +1,6 @@
 -   id: invoke
     name: invoke
-    entry: invoke
+    entry: invoke-wrapper
     language: python
     'types': [file]
     args: []
