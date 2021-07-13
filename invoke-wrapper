@@ -8,11 +8,11 @@ import subprocess
 def main(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument("task", help="The invoke task to run")
-    parser.add_argument("--inv-flag", action="append", default=[], help="Pass an extra CLI flag to the invoke task")
+    parser.add_argument("--task-flag", action="append", default=[], help="Pass an extra CLI flag to the invoke task")
     parser.add_argument("files", nargs='*')
 
     args = parser.parse_args(args=argv)
-    command = ["invoke", args.task] + args.extra_flag
+    command = ["invoke", args.task] + args.task_flag
     if args.files:
         command.extend([
             "--files",
