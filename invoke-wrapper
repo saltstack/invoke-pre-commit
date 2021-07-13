@@ -13,7 +13,11 @@ def main(argv):
     args, unknown_arguments = parser.parse_known_args(args=argv)
     command = ["invoke", args.task]
     if unknown_arguments:
-        command.extend(unknown_arguments)
+        for arg in unknown_arguments:
+            if not arg.startswith("-"):
+                args.files.append(arg)
+                continue
+            command.append(arg)
     if args.files:
         command.extend([
             "--files",
